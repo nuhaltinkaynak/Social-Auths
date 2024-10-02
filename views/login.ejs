@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    
+<script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '{your-app-id}',
+        cookie     : true,
+        xfbml      : true,
+        version    : '{api-version}'
+      });
+        
+      FB.AppEvents.logPageView();   
+        
+    };
+  
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "https://connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
+    <style>
+        body{
+            font-family: arial; 
+            margin: 0;
+        }
+        nav{
+            background: #088832;
+            padding: 20px 10px;        
+        } 
+        nav ul{
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0;  
+        } 
+        nav li{
+            list-style-type: none; 
+            display: inline-block;
+            margin: 0 10px 0 0;
+        } 
+
+        nav a{
+            color: #ffffff;
+            font-size: 18px; 
+            background: rgba(72, 47, 47, 0.2);
+            text-decoration: none;
+            padding: 10px; 
+            display: block;
+        }
+        main, header {
+            max-width: 960px; 
+            margin: 30px auto;
+            padding: 0 10px; 
+            color:#333;
+        }
+        .google-btn {
+            color:#fff;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px;
+            background: #ff5353;
+        }
+        .facebook-btn {
+            color:#ffffff;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px;
+            background: #4a79e8;
+        }
+        .github-btn {
+            color:#ffffff;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px;
+            background: #000000;
+        }
+        .twitter-btn {
+            color:#ffffff;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px;
+            background: #39b0d1;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li> <a href="/">Homepage</a></li>
+            <li> <a href="/profile">Profile</a></li>
+            <li> <a href="/auth/login">Login</a></li>
+            <li> <a href="/auth/logout">Logout</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>Login using:</h1>
+    </header>
+    <main>
+        <a class="google-btn" href="/auth/google">Google</a>
+        <a class="facebook-btn" href="/auth/facebook">Facebook</a>
+        <a class="github-btn" href="/auth/github">GitHub</a>
+        <a class="twitter-btn" href="/auth/twitter">Twitter</a>
+    </main>
+</body>
+</html>
